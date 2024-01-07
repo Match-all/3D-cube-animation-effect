@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
   <title> 3d-cube-effect</title>
@@ -9,29 +10,93 @@
 
   <link rel="stylesheet" type="text/css" href="./main.css">
   <script src="main.js"></script>
-  
+
+
+  <style>
+    /*small cube*/
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100%;
+      background-color: #111;
+      overflow: hidden;
+    }
+
+    .cub {
+      position: absolute;
+      height: 300px;
+      width: 300px;
+    }
+
+    .cube div {
+      position: absolute;
+      top: 58px;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transform: rotateX(-20deg);
+      animation: animate 5s linear infinite;
+    }
+
+    @keyframes animate {
+      0% {
+        transform: rotateX(-20deg) rotateY(360deg);
+      }
+
+      100% {
+        transform: rotateX(-20deg) rotateY(0deg 'angle');
+      }
+    }
+
+    .cube .big span {
+      position: absolute;
+      height: 300px;
+      width: 300px;
+      background-color: var(--crl);
+      transform: rotateY(calc(90deg * var(--i))) translateZ(150px);
+      transform-style: preserve-3d;
+    }
+
+    .cub .big{
+      transform: rotateX(90deg) translateZ(150px);
+    }
+
+    /*small cube*/
+  </style>
+
+
 </head>
-<body style="background-color: black;">
-  
+
+<body>
+
   <div class="cube">
     <div class="big">
-      <span style="--i:1; --crl:blue;"></span>
-      <span style="--i:2; --crl:rgb(16, 3, 47);"></span>
-      <span style="--i:3; --crl:blue;"></span>
-      <span style="--i:4; --crl:rgb(16, 3, 47);"></span>
-      <span class="top" style="--crl:rgb(86, 161, 223);"></span>
+      <span style="--i:1; --crl:rgb(12, 12, 151);"></span>
+      <span style="--i:2; --crl:rgb(10, 10, 113);"></span>
+      <span style="--i:3; --crl:rgb(12, 12, 151);"></span>
+      <span style="--i:4; --crl:rgb(10, 10, 113);"></span>1
     </div>
   </div>
 
   <div class="cube2">
     <div class="big">
       <span style="--i:1; --crl:red;"></span>
-      <span style="--i:2; --crl:rgb(113, 9, 9);"></span>
-      <span style="--i:3; --crl:steelblue;"></span>
-      <span style="--i:4; --crl:steelblue;"></span>
+      <span style="--i:2; --crl:rgb(180, 70, 70);;"></span>
+      <span style="--i:3; --crl:red;"></span>
+      <span style="--i:4; --crl:rgb(180, 70, 70);"></span>
       <span class="top" style="--crl:rgb(86, 161, 223);"></span>
     </div>
   </div>
 
 </body>
+
 </html>
